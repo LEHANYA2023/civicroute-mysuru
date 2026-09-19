@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login | CivicMysuru</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth">
+  <div class="auth-shell">
+    <a class="brand center" href="index.html"><i>CM</i>Civic<span>Mysuru</span></a>
+    <div class="auth-card">
+      <div class="eyebrow">
+        CIVIC ACCESS
+      </div>
+      <h1>Welcome back.</h1>
+      <p class="muted">Sign in to report, track and manage civic complaints.</p>
+      <form id="loginForm" name="loginForm">
+        <label>Email<input id="email" type="email" placeholder="citizen@example.com" required=""></label><label>Password<input id="password" type="password" minlength="4" placeholder="••••••••" required=""></label><button class="btn primary large" type="submit">Enter CivicMysuru →</button>
+      </form>
+      <div class="note">
+        <b>Hackathon MVP</b>
+        <p>This is demo authentication. Any valid email and 4+ character password creates a local session.</p>
+      </div>
+    </div><a class="back" href="index.html">← Back to CivicMysuru</a>
+  </div>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

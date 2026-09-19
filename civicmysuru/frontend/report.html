@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Report Issue | CivicMysuru</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="index.html"><i>CM</i>Civic<span>Mysuru</span></a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a><a class="active" href="report.html">Report Issue</a><a href="detect.html">AI Detection</a>
+    </div>
+    <div class="nav-actions">
+      <span id="userPill" class="pill">Guest</span><button class="theme-btn" data-theme-toggle="">☾</button>
+    </div>
+  </nav>
+  <main class="app">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">
+          CITIZEN REPORTING
+        </div>
+        <h1>Report a civic issue</h1>
+        <p class="muted">Give enough context to route the complaint accurately.</p>
+      </div><span class="status">● Routing engine online</span>
+    </div>
+    <div class="report-grid">
+      <form id="complaintForm" class="panel" name="complaintForm">
+        <div class="eyebrow">
+          01 / DETAILS
+        </div>
+        <h2>Complaint information</h2>
+        <div class="form-grid">
+          <label>Citizen name<input id="citizenName" required="" placeholder="Your name"></label><label>Area<input id="area" required="" placeholder="e.g. Vijayanagar"></label><label>Issue type<select id="issueType" required="">
+            <option value="">
+              Select issue
+            </option>
+            <option>
+              Pothole / Road Damage
+            </option>
+            <option>
+              Garbage / Waste
+            </option>
+            <option>
+              Streetlight
+            </option>
+            <option>
+              Drainage / Sewage
+            </option>
+            <option>
+              Water Supply
+            </option>
+            <option>
+              Public Safety
+            </option>
+            <option>
+              Other
+            </option>
+          </select></label><label>Location / landmark<div class="location-input"><input id="location" placeholder="Street or landmark"><button type="button" id="detectLocation" class="location-btn" title="Detect my location">📍</button></div></label>
+        </div><label>Description
+        <textarea id="description" rows="6" required="" placeholder="Describe the issue, seriousness and exact location."></textarea></label><label class="upload">＋ <b>Attach evidence</b><small>Optional image • JPG, PNG, WEBP</small><input id="complaintImage" type="file" accept="image/*"><span id="imageName"></span></label>
+        <div class="actions">
+          <a class="btn ghost" href="dashboard.html">Cancel</a><button class="btn primary" type="submit">Submit Complaint →</button>
+        </div>
+      </form>
+      <aside class="panel">
+        <div class="eyebrow">
+          02 / INTELLIGENCE
+        </div>
+        <h2>Live routing preview</h2>
+        <p class="muted">The backend evaluates details before submission.</p>
+        <div class="route">
+          <small>AUTHORITY</small><b id="previewAuthority">Awaiting area</b>
+        </div>
+        <div class="route">
+          <small>DEPARTMENT</small><b id="previewDepartment">Awaiting issue</b>
+        </div>
+        <div class="route">
+          <small>PRIORITY</small><b id="previewPriority">Not calculated</b>
+        </div>
+        <div class="route">
+          <small>ROUTING MODE</small><b id="previewMode">Standard</b>
+        </div>
+        <div class="ai">
+          <div class="eyebrow">
+            AI ASSIST
+          </div>
+          <p id="aiText">Describe the issue or attach an image to prepare the classifier.</p><button id="classifyBtn" type="button" class="btn small ghost">Classify Issue</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <div id="toastContainer" class="toasts"></div>
+  <footer>
+    CivicMysuru • Citizen Reporting
+  </footer>
+  <script src="js/common.js"></script>
+  <script src="js/report.js"></script>
+</body>
+</html>

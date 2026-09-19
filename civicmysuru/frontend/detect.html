@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Detection | CivicMysuru</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a class="brand" href="index.html"><i>CM</i>Civic<span>Mysuru</span></a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="report.html">Report Issue</a>
+      <a class="active" href="detect.html">AI Detection</a>
+    </div>
+    <div class="nav-actions">
+      <span id="userPill" class="pill">Guest</span>
+      <button class="theme-btn" data-theme-toggle>☾</button>
+    </div>
+  </nav>
+
+  <main class="app">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">DETECTION WITHOUT REPORTING</div>
+        <h1>AI issue detection</h1>
+        <p class="muted">Upload a photo of a civic issue and let the classifier suggest what it is — before anyone files a report.</p>
+      </div>
+    </div>
+
+    <div class="report-grid">
+      <div class="panel ai-upload-card">
+        <div class="eyebrow">01 / EVIDENCE</div>
+        <div class="ai-icon">◌</div>
+        <h3>Upload a photo</h3>
+        <p>JPG, PNG or WEBP. The classifier reads the filename and any description you add — it's an explainable, rule-based demo classifier, not a trained vision model.</p>
+        <label class="ai-upload">Choose file
+          <input id="detectImage" type="file" accept="image/*">
+        </label>
+        <div id="detectFileName" class="muted" style="margin-top:12px;font-size:11px"></div>
+        <label style="margin-top:20px;text-align:left;display:block">Optional description
+          <textarea id="detectDescription" rows="3" placeholder="e.g. Large pothole near the bus stop"></textarea>
+        </label>
+      </div>
+
+      <aside class="panel detection-result" id="detectionResult">
+        <div class="detection-placeholder">
+          <span>◌</span>
+          <p>Upload a photo to run detection</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="toastContainer" class="toasts"></div>
+  <footer>CivicMysuru • AI Detection</footer>
+  <script src="js/common.js"></script>
+  <script src="js/detect.js"></script>
+</body>
+
+</html>
